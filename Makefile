@@ -12,7 +12,7 @@
 
 SRC		= src/ft_printf.c src/ft_printf_utils.c
 NAME	= libftprintf.a
-CC		= gcc
+CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 AR		= ar rcs

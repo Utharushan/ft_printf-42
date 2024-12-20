@@ -6,7 +6,7 @@
 /*   By: tuthayak <tuthayak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:18:03 by tuthayak          #+#    #+#             */
-/*   Updated: 2024/11/28 17:46:21 by tuthayak         ###   ########.fr       */
+/*   Updated: 2024/12/20 11:46:00 by tuthayak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,13 @@ int	ft_printf(const char *str, ...)
 
 	i = 0;
 	count = 0;
+	if (!str)
+		return (-1);
 	va_start(arg, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
-			count += convert(str[i++ + 1], arg);
+			count += convert(str[++i], arg);
 		else
 			count += ft_putchar(str[i]);
 		i++;
